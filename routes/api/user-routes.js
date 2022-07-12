@@ -5,8 +5,16 @@ const {
   getUserById,
   createUser,
   updateUser,
-  deleteUser
+  deleteAFriend,
+  deleteUser,
+  addAFriend
 } = require('../../controllers/user-controller');
+
+
+router
+  .route('/:userId/friends/:friendId')
+  .post(addAFriend)
+  .delete(deleteAFriend);
 
 // /api/pizzas
 router
@@ -20,6 +28,8 @@ router
   .get(getUserById)
   .put(updateUser)
   .delete(deleteUser);
+
+
 
 module.exports = router;
 // user
