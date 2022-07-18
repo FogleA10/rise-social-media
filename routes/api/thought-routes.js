@@ -21,7 +21,9 @@ router
   .delete(deleteThought);
 
 // /api/comments/<pizzaId>/<commentId>/<replyId>
-router.route('/:thoughtId/reactions').delete(deleteAReaction).post(addAReaction);
+router.route('/:thoughtId/reactions').post(addAReaction);
+
+router.route('/:thoughtId/reactions/:reactionId').delete(deleteAReaction);
 
 module.exports = router;
 // thought
